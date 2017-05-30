@@ -1,7 +1,7 @@
 package veterinary;
 
 import controllers.Login;
-import models.Owner;
+import menu.MainMenu;
 import utils.IO;
 
 
@@ -13,9 +13,8 @@ public class Veterinary {
         boolean logged = new Login().make();
         if (logged) {
             io.writeln("login exitoso");
-            for (int i = 0; i < 5; i++) {
-                Owner.create();
-            }
+            MainMenu menu = new MainMenu();
+            menu.run();
         } else {
             io.writeln("login incorrecto");
         }

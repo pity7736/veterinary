@@ -20,29 +20,18 @@ public class Owner {
 
     private static String filePath = "/home/pity/development/java/veterinary/src/models/owners.csv";
 
-    private int maxRecords = 2;
+    private int maxRecords = 5;
 
     private static IO io = IO.instance();
 
-    public static Owner create() {
-        String id = io.readString("Ingrese cédula: ");
-        String name = io.readString("Ingrese nombre completo: ");
-        String address = io.readString("Ingrese dirección: ");
-        String phoneNumber = io.readString("Ingrese número telefónico: ");
-        Owner owner = new Owner(id, name, address, phoneNumber);
-        io.writeln("Registro exitoso!\n");
-        return owner;
-    }
-
-    private Owner(String id, String name, String address, String phoneNumber) {
+    public Owner(String id, String name, String address, String phoneNumber) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.add();
     }
 
-    private void add(){
+    public void add(){
         Owner.records.add(this);
         if (Owner.records.size() == this.maxRecords){
             this.recordsToFile();
