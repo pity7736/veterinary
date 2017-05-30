@@ -1,6 +1,7 @@
 package utils;
 
 import java.io.BufferedReader;
+import java.io.Console;
 import java.io.InputStreamReader;
 
 
@@ -33,11 +34,24 @@ public class IO {
         return input;
     }
 
+    public String readPassword(String title) {
+        Console console = System.console();
+        String password;
+        if (console != null) {
+            this.write(title);
+            password = new String(console.readPassword());
+        } else {
+            this.writeln("console no disponible.");
+            password = this.readString(title);
+        }
+        return password;
+    }
+
     public String readString(String title) {
         String input = null;
         boolean ok = false;
         do {
-            this.writeln(title);
+            this.write(title);
             try {
                 input = this.bufferedReader.readLine();
                 ok = true;
@@ -50,5 +64,9 @@ public class IO {
 
     public void writeln(String string) {
         System.out.println(string);
+    }
+
+    public void write(String string) {
+        System.out.print(string);
     }
 }

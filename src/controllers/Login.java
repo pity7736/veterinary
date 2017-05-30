@@ -22,7 +22,7 @@ public class Login {
     }
 
     private void askData() {
-        this.username = this.io.readString("Ingrese nombre de usuario:");
-        this.password = this.io.readString("Ingrese password");
+        this.username = this.io.readString("Ingrese nombre de usuario: ");
+        this.password = this.io.readPassword("Ingrese contraseña: ");
     }
 }
