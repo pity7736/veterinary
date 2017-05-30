@@ -52,11 +52,7 @@ public class User {
     }
 
     public boolean checkPassword(String password) {
-        boolean ok = false;
-        if (this.password.equals(password)){
-            ok = true;
-        }
-        return ok;
+        return this.password.equals(password);
     }
 
     @Override
