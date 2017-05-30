@@ -1,6 +1,6 @@
 package veterinary;
 
-import models.User;
+import controllers.Login;
 import utils.IO;
 
 
@@ -8,7 +8,12 @@ public class Veterinary {
 
     public static void main(String[] args) {
         IO io = IO.instance();
-        User user = User.getUserByUsername("admin");
-        io.writeln(user.toString());
+        io.writeln("*****Bienvenidos a su veterinaria*****");
+        boolean logged = new Login().make();
+        if (logged) {
+            io.writeln("login exitoso");
+        } else {
+            io.writeln("login incorrecto");
+        }
     }
 }
