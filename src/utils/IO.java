@@ -1,7 +1,10 @@
 package utils;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.Console;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 
@@ -60,6 +63,15 @@ public class IO {
             }
         } while(!ok);
         return input;
+    }
+
+    public void writeToFile(String filePath, String content) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true))) {
+            bw.write(content + "\n");
+            this.writeln("¡Escritura exitosa!");
+        } catch(IOException e) {
+            this.writeln("Error al escribir en archivo.");
+        }
     }
 
     public void writeln(String string) {

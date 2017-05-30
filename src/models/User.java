@@ -12,7 +12,7 @@ public class User {
 
     private String password;
 
-    private static String filePath = "/home/pity/development/java/veterinary/src/models/users.txt";
+    private static String filePath = "/home/pity/development/java/veterinary/src/models/users.csv";
 
     public User(String username, String password){
         this.username = username;
@@ -59,6 +59,7 @@ public class User {
         return ok;
     }
 
+    @Override
     public String toString() {
         return this.username;
     }
