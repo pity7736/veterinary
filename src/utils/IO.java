@@ -3,6 +3,7 @@ package utils;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+
 public class IO {
 
     private static IO io = null;
@@ -47,7 +48,7 @@ public class IO {
         return input;
     }
 
-    private void writeln(String string) {
+    public void writeln(String string) {
         System.out.println(string);
     }
 }
