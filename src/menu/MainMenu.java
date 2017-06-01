@@ -12,6 +12,7 @@ public class MainMenu extends Menu {
     protected ArrayList<Command> getOptions() {
         ArrayList<Command> commands = new ArrayList<Command>();
         commands.add(new OwnerCommand());
+        commands.add(new PetCommand());
         return commands;
     }
 
