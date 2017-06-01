@@ -1,5 +1,6 @@
 package menu;
 
+import models.Pet;
 import utils.IO;
 
 public class PetCommand extends Command {
@@ -17,6 +18,8 @@ public class PetCommand extends Command {
         String breed = io.readString("Ingrese raza: ");
         String gender = io.readString("Ingrese género: ");
         int age = io.readInt("Ingrese edad mascota: ");
+        Pet pet = new Pet(id, name, code, breed, gender, age);
+        pet.add();
         io.writeln("Registro exitoso!\n");
     }
 
