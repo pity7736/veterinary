@@ -10,13 +10,15 @@ public class Veterinary {
     public static void main(String[] args) {
         IO io = IO.instance();
         io.writeln("*****Bienvenidos a su veterinaria*****");
-        boolean logged = new Login().make();
-        if (logged) {
-            io.writeln("login exitoso");
-            MainMenu menu = new MainMenu();
-            menu.run();
-        } else {
-            io.writeln("login incorrecto");
-        }
+        boolean logged = false;
+        MainMenu menu = new MainMenu();
+        do {
+            logged = new Login().make();
+            if (logged) {
+                menu.run();
+            } else {
+                io.writeln("Usuario y/o contraseña incorrectos\n");
+            }
+        } while(!logged);
     }
 }
