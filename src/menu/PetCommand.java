@@ -3,6 +3,7 @@ package menu;
 import models.Pet;
 import utils.IO;
 
+
 public class PetCommand extends Command {
 
     public PetCommand() {
@@ -14,7 +15,7 @@ public class PetCommand extends Command {
         IO io = IO.instance();
         String id = io.readString("Ingrese cédula: ");
         String name = io.readString("Ingrese nombre mascota: ");
-        int code = io.readInt("Ingrese nombre mascota: ");
+        int code = io.readInt("Ingrese código mascota: ");
         String breed = io.readString("Ingrese raza: ");
         String gender = io.readString("Ingrese género: ");
         int age = io.readInt("Ingrese edad mascota: ");

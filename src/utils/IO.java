@@ -66,7 +66,7 @@ public class IO {
     }
 
     public void writeToFile(String filePath, String content) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
             bw.write(content + "\n");
             this.writeln("¡Escritura exitosa!");
         } catch(IOException e) {
